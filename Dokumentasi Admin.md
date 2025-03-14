@@ -135,6 +135,38 @@ POST /admin/products
 - Parameter bersifat opsional, sehingga dapat digunakan sesuai kebutuhan.
 
 
+## Endpoint: Update Product
+### Endpoint
+```
+PUT /admin/products
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| name      | varchar | (Required) Nama product |
+| tag      | varchar | (Required) Tag dengan, |
+| description| varchar | (Required) Deskripsi produk |
+| price_type| varchar | (Required) inlist("range,fix,free") Metode Bayar |
+| price_start| integer | (optional) Jika memilih range maka wajib |
+| price_end| integer | (optional) Jika memilih range maka wajib |
+| price_fix| integer | (optional) Jika memilih fix maka wajib |
+
+
+
+### Response
+#### Success Response (200 Ok)
+```json
+{
+    "status": 200,
+    "message": "Data berhasil diupdate"
+}
+```
+
+### Notes
+- Parameter bersifat opsional, sehingga dapat digunakan sesuai kebutuhan.
+
+
 
 ## Endpoint: Delete Product
 ### Endpoint
