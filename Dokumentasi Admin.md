@@ -102,3 +102,34 @@ GET /admin/products/{id}
 
 
 
+## Endpoint: Create Product
+### Endpoint
+```
+GET /admin/products/{id}
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| name      | varchar | (Required) Nama product |
+| tag      | varchar | (Required) Tag dengan, |
+| description| varchar | (Required) Deskripsi produk |
+| price_type| varchar | (Required) inlist("range,fix,free") Metode Bayar |
+| price_start| varchar | (optional) Jika memilih range maka wajib |
+| price_end| varchar | (optional) Jika memilih range maka wajib |
+| price_fix| varchar | (optional) Jika memilih fix maka wajib |
+| image| file | (required) File type image |
+
+
+
+### Response
+#### Success Response (201 Created)
+```json
+{
+    "status": 201,
+    "message": "Data berhasil disimpan"
+}
+```
+
+### Notes
+- Parameter bersifat opsional, sehingga dapat digunakan sesuai kebutuhan.
