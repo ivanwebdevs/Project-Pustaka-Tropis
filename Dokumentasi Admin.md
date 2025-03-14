@@ -115,9 +115,9 @@ GET /admin/products/{id}
 | tag      | varchar | (Required) Tag dengan, |
 | description| varchar | (Required) Deskripsi produk |
 | price_type| varchar | (Required) inlist("range,fix,free") Metode Bayar |
-| price_start| varchar | (optional) Jika memilih range maka wajib |
-| price_end| varchar | (optional) Jika memilih range maka wajib |
-| price_fix| varchar | (optional) Jika memilih fix maka wajib |
+| price_start| integer | (optional) Jika memilih range maka wajib |
+| price_end| integer | (optional) Jika memilih range maka wajib |
+| price_fix| integer | (optional) Jika memilih fix maka wajib |
 | image| file | (required) File type image |
 
 
