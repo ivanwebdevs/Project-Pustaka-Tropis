@@ -105,7 +105,7 @@ GET /admin/products/{id}
 ## Endpoint: Create Product
 ### Endpoint
 ```
-GET /admin/products/{id}
+POST /admin/products
 ```
 
 ### Parameters
@@ -133,3 +133,31 @@ GET /admin/products/{id}
 
 ### Notes
 - Parameter bersifat opsional, sehingga dapat digunakan sesuai kebutuhan.
+
+
+
+## Endpoint: Delete Product
+### Endpoint
+```
+DELETE /admin/products/{id}
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| id      | varchar | (Required) ID Product |
+
+
+
+
+### Response
+#### Success Response (200 Ok)
+```json
+{
+    "status": 200,
+    "message": "Data berhasil dihapus"
+}
+```
+
+### Notes
+- Parameter ID Bersifat wajib.
