@@ -193,3 +193,126 @@ DELETE /admin/products/{id}
 
 ### Notes
 - Parameter ID Bersifat wajib.
+
+
+
+
+## Endpoint: List Tag
+### Endpoint
+```
+GET /admin/tags
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| name      | varchar | (optional) Name Tag |
+| page      | integer | (optional) Selected page |
+| limit      | integer | (optional) Limit of search |
+
+
+
+
+### Response
+#### Success Response (200 Ok)
+```json
+{
+    "pagination": {
+        "prev": null,
+        "next": null,
+        "list_prev": [],
+        "list_next": []
+    },
+    "current_page": 1,
+    "total_pages": 1,
+    "item_found": 6,
+    "curent_item": 6,
+    "limit": 10,
+    "data": [
+        {
+            "id": "6",
+            "name": "abang",
+            "created_at": "2025-03-15 17:37:44"
+        },
+        {
+            "id": "5",
+            "name": "Aditiya",
+            "created_at": "2025-03-15 17:35:00"
+        },
+        {
+            "id": "4",
+            "name": "testing",
+            "created_at": "2025-03-15 17:33:19"
+        },
+        {
+            "id": "1",
+            "name": "tag example 1",
+            "created_at": "2025-03-14 15:30:01"
+        },
+        {
+            "id": "2",
+            "name": "tag example 2",
+            "created_at": "2025-03-14 15:30:01"
+        },
+        {
+            "id": "3",
+            "name": "tag example 3",
+            "created_at": "2025-03-14 15:30:01"
+        }
+    ]
+}
+```
+
+### Notes
+- Parameter Optional tidak wajib di isi
+
+
+
+## Endpoint: Create Tag
+### Endpoint
+```
+POST /admin/tags
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| name      | varchar | (Required) Name Tag |
+
+
+### Response
+#### Success Response (200 Ok)
+```json
+{
+    "status": 201,
+    "message": "Data berhasil disimpan"
+}
+```
+
+### Notes
+- Parameter Parameter Name Wajib di isi
+
+
+## Endpoint: Create Tag
+### Endpoint
+```
+DELETE /admin/tags/{id}
+```
+
+### Parameters
+| Parameter | Type   | Description                    |
+|-----------|--------|--------------------------------|
+| id      | varchar | (Required) ID |
+
+
+### Response
+#### Success Response (200 Ok)
+```json
+{
+    "status": 200,
+    "message": "Data berhasil dihapus"
+}
+```
+
+### Notes
+- Parameter Parameter Name Wajib di isi
