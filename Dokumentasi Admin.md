@@ -293,7 +293,7 @@ POST /admin/tags
 - Parameter Parameter Name Wajib di isi
 
 
-## Endpoint: Create Tag
+## Endpoint: Delete Tag
 ### Endpoint
 ```
 DELETE /admin/tags/{id}
