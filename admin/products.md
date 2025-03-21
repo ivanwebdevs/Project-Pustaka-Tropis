@@ -14,6 +14,52 @@ Semua endpoint dalam kategori produk dilindungi oleh autentikasi. Jika pengguna 
 
 ---
 
+# Endpoint: Menambahkan Produk
+
+## Endpoint
+**POST** `/api/admin/products`
+
+## Deskripsi
+Endpoint ini digunakan untuk menambahkan produk baru.
+
+## Parameter
+| Parameter    | Tipe   | Wajib | Deskripsi                                      |
+|-------------|--------|------|------------------------------------------------|
+| name        | string | Ya   | Nama produk                                    |
+| categories  | string | Ya   | Kategori produk                                |
+| description | string | Ya   | Deskripsi produk                              |
+| price_type  | string | Ya   | Jenis harga (`range`, `fixed`, `free`)        |
+| price_start | int    | Tidak | Harga awal (jika `price_type` adalah `range`) |
+| price_end   | int    | Tidak | Harga akhir (jika `price_type` adalah `range`) |
+| price_fix   | int    | Tidak | Harga tetap (jika `price_type` adalah `fixed`) |
+| gambar      | file   | Ya   | Gambar produk dalam format JPG, JPEG, PNG, GIF |
+
+## Contoh Request
+
+### HTTP Request
+```http
+POST /api/admin/products HTTP/1.1
+Host: your-api-domain.com
+Content-Type: multipart/form-data
+```
+
+## Response
+
+### Berhasil
+**Status Code: 201**
+```json
+{
+    "status": 201,
+    "message": "Produk berhasil ditambahkan"
+}
+```
+
+## Catatan
+- Pastikan pengguna telah login sebelum mengakses endpoint ini.
+- Pastikan file gambar memenuhi aturan validasi yang ditetapkan.
+
+---
+
 # Endpoint: Mendapatkan Daftar Produk
 
 ## Endpoint
@@ -179,50 +225,4 @@ Host: your-api-domain.com
 ## Catatan
 - Pastikan pengguna telah login sebelum mengakses endpoint ini.
 - Jika produk dengan ID yang diberikan tidak ditemukan, sistem akan mengembalikan respons dengan status `404 Not Found`.
-
----
-
-# Endpoint: Menambahkan Produk
-
-## Endpoint
-**POST** `/api/admin/products`
-
-## Deskripsi
-Endpoint ini digunakan untuk menambahkan produk baru.
-
-## Parameter
-| Parameter    | Tipe   | Wajib | Deskripsi                                      |
-|-------------|--------|------|------------------------------------------------|
-| name        | string | Ya   | Nama produk                                    |
-| categories  | string | Ya   | Kategori produk                                |
-| description | string | Ya   | Deskripsi produk                              |
-| price_type  | string | Ya   | Jenis harga (`range`, `fixed`, `free`)        |
-| price_start | int    | Tidak | Harga awal (jika `price_type` adalah `range`) |
-| price_end   | int    | Tidak | Harga akhir (jika `price_type` adalah `range`) |
-| price_fix   | int    | Tidak | Harga tetap (jika `price_type` adalah `fixed`) |
-| gambar      | file   | Ya   | Gambar produk dalam format JPG, JPEG, PNG, GIF |
-
-## Contoh Request
-
-### HTTP Request
-```http
-POST /api/admin/products HTTP/1.1
-Host: your-api-domain.com
-Content-Type: multipart/form-data
-```
-
-## Response
-
-### Berhasil
-**Status Code: 201**
-```json
-{
-    "status": 201,
-    "message": "Produk berhasil ditambahkan"
-}
-```
-
-## Catatan
-- Pastikan pengguna telah login sebelum mengakses endpoint ini.
-- Pastikan file gambar memenuhi aturan validasi yang ditetapkan.
 
