@@ -95,3 +95,67 @@ Digunakan untuk melakukan logout pengguna.
 }
 ```
 
+---
+
+### 4. Registrasi
+**Endpoint:** `POST /api/user/auth/register`
+
+**Deskripsi:**
+Digunakan untuk mendaftarkan pengguna baru.
+
+**Request Body:**
+```json
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "password123"
+}
+```
+
+**Response Sukses:**
+```json
+{
+    "status": 201,
+    "message": "Berhasil registrasi"
+}
+```
+
+**Response Gagal:**
+- Jika data tidak lengkap atau tidak valid:
+```json
+{
+    "status": 400,
+    "message": "Validation errors",
+    "errors": {
+        "email": "Email sudah terdaftar"
+    }
+}
+```
+
+---
+
+### 5. Detail Pengguna
+**Endpoint:** `GET /api/user/auth/detail`
+
+**Deskripsi:**
+Digunakan untuk mendapatkan informasi pengguna yang sedang login.
+
+**Response Jika Berhasil:**
+```json
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "created_at": "2024-03-22 12:00:00",
+    "updated_at": "2024-03-22 12:30:00"
+}
+```
+
+**Response Jika Belum Login:**
+```json
+{
+    "status": 400,
+    "message": "Anda belum login"
+}
+```
+
